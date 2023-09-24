@@ -1,0 +1,18 @@
+  Задание. Создать сервис,состоящий из двух различных контейнеров: 1-веб, 2- бд
+  
+  Остальное не получается сделать, так как клонированный вторая нода не запускается на моем ноутбуке, прошу прощения. Промучилась очень долго, но все равно не получилось. Очень жаль!
+  
+  Список команд в теримнале Ubuntu
+  
+  mkdir docker
+  796  cd docker
+  797  touch compose.yml
+  798  nano compose.yml
+  805  sudo docker compose up -d
+  806  sudo docker ps -a
+
+Содержимое файла compose.yml
+sudo docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=mysql123 -d mysql:8.1.0
+sudo docker run --name my-phpmyadmin -d --link test-mysql:db -p 8081:80
+
+
